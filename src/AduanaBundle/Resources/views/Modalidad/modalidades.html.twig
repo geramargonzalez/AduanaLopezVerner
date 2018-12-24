@@ -1,0 +1,81 @@
+{% extends "AduanaBundle:Default:layouts.html.twig"%}  
+
+
+{%block content %} 
+
+    <h2 class="title-modalidad"> Modalidad </h2>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+                <a href="{{path("blog_add_mod")}}" class="btn-Addmodalidad btn btn-success">Añadir Modalidad</a>
+            </div>
+
+
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+
+
+                {% for message in app.session.flashbag().get('status')%}
+                    <div class="alert alert-success" role="alert">
+                        {{message}}
+                    </div>
+                {%endfor%}
+
+            </div>
+
+
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            </div>
+
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+
+                <table class="table">
+                    <tr>
+                        <th>
+                            Modalidad
+                        </th> 
+                        <th>
+                            Eliminar
+                        </th> 
+                    </tr>
+
+                    {% for mod in mods %}
+                        <tr>
+                            <td>
+                                {{mod.nombreModalidad}} 
+                            </td>
+                            <td>
+                                <a href="{{path("blog_eli_mod", {"id":mod.idmodalidad}) }}" class="btn btn-danger">Eliminar</a> 
+                            </td>
+                        </tr>
+                    {% endfor %}        
+
+
+                </table>
+
+            </div>
+
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            </div>        
+
+        </div>
+    </div>
+
+
+
+{% endblock %}

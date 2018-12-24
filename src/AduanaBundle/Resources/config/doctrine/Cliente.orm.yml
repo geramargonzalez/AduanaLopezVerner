@@ -1,0 +1,35 @@
+AduanaBundle\Entity\Cliente:
+    type: entity
+    table: Cliente
+    uniqueConstraints:
+        CiClienteUnique:
+            columns:
+                - ci
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        ci:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        nombre:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        apellido:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

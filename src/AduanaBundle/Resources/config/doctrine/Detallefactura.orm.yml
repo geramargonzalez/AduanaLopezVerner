@@ -1,0 +1,27 @@
+AduanaBundle\Entity\Detallefactura:
+    type: entity
+    table: DetalleFactura
+    id:
+        iddetalle:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idDetalle
+            generator:
+                strategy: IDENTITY
+    fields:
+        idfactura:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idFactura
+        subtotal:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            column: subTotal
+    lifecycleCallbacks: {  }

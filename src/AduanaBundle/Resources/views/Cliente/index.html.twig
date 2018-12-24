@@ -1,0 +1,67 @@
+{% extends "AduanaBundle:Default:layouts.html.twig"%}  
+
+
+{%block content %} 
+
+
+    <div class="col-lg-4 box-form">
+
+        <h2> Clientes activos </h2>
+
+        <a href="{{path("blog_add_cli")}}" class="btn btn-success">Añadir Cliente</a>
+
+        <hr/>
+        
+        {% for message in app.session.flashbag().get('status')%}
+            
+            <div class="alert alert-success" role="alert">
+              
+                {{message}}
+           
+            </div>
+        
+        {%endfor%}
+
+        <table class="table table-dark">
+               <tr>
+                <th>
+                    Cedula
+                </th> 
+                <th>
+                    Nombre 
+                </th> 
+                  <th>
+                    Apellido
+                </th>
+                <th>
+                    Eliminar
+                </th> 
+            </tr>
+
+            {% for cli in clis %}
+                <tr>
+                    <td>
+                        {{cli.ci}} 
+                    </td>
+                    <td>
+                        {{cli.nombre}} 
+                    </td>
+                     <td>
+                        {{cli.apellido}} 
+                    </td>
+                     <td>
+                        <a href="{{path("blog_eli_cli", {"id":cli.id}) }}" class="btn btn-danger">Eliminar</a> 
+                     </td>
+                </tr>
+            {% endfor %}        
+
+
+        </table>
+    </div>
+
+
+
+    <div class="clearfix"></div>
+
+
+{% endblock %}

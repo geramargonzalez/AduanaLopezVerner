@@ -1,0 +1,64 @@
+AduanaBundle\Entity\Factura:
+    type: entity
+    table: Factura
+    repositoryClass: AduanaBundle\Repository\FacturaRepository
+    indexes:
+        fk_foreign_cliente:
+            columns:
+                - idClietne
+    id:
+        idfactura:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idFactura
+            generator:
+                strategy: IDENTITY
+    fields:
+        fechafactura:
+            type: date
+            nullable: false
+            column: fechaFactura
+        concepto:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        modalidad:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        moneda:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        total:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+        estado:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+    manyToOne:
+        idclietne:
+            targetEntity: Cliente
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idClietne:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

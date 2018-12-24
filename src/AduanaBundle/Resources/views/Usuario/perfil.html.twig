@@ -1,0 +1,50 @@
+{% extends "AduanaBundle:Default:layouts.html.twig"%}  
+
+
+{%block content %} 
+
+    <div class="container ">
+
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4">
+
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 img-perfil">
+                <img title="profile image" class="img-circle img-responsive" src="{{asset("uploads/usuarios/"~app.user.imagen)}}">
+            </div>
+
+            <div class="col-lg-4 col-md-4">
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4">
+
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+
+                <h3 class="title-perfil"><strong>{{user.nombre}} {{user.apellido}}</strong></h3>             
+
+                <p class="email-perfil" > Email: {{user.email}}</p>
+                <p class="email-perfil" > Cantidad de facturas realizadas:  {{cantidad}}</p>
+                <p class="rol-perfil"> Rol:   {{user.rol}}</p>
+                <p class="bio-perfil" > Bio: {{user.bio}}</p> 
+
+            </div> 
+
+            <div class="col-lg-4 col-md-4">
+
+            </div>
+
+        </div>          
+
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends "AduanaBundle:Default:layouts.html.twig"%}  
+
+{%block javascripts %} 
+    {{parent()}}
+    <script src="{{asset("assets/js/custom/nick-test.js") }}"></script>
+{% endblock %}
+
+
+{%block content %} 
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box-form">
+
+                <h2 class="display-1">Crear Factura Electronica</h2>
+
+                {% for message in app.session.flashbag().get('status')%}
+
+                    <div class="alert alert-success" role="alert">
+
+                        {{message}}
+
+                    </div>
+
+                {%endfor%}
+
+                {{form_start(form,{'action':'','method':'POST'})}}
+
+                <div class="row">             
+
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+
+                        {{ form_row(form.idclietne) }}
+
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+
+                        {{ form_row(form.fechafactura) }}
+
+                    </div>
+
+                </div>
+
+                <div class="row">  
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+                        {{ form_row(form.moneda) }}
+
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+
+                        {{ form_row(form.concepto) }}
+                        {{ form_row(form.numeroConcepto) }}
+
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+
+                    </div>
+
+                </div>
+
+                {{ form_row(form.modalidad) }}
+
+                <div class="row">
+
+                    <div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="numModalidad">   
+
+                        {{ form_row(form.numeroModalidad) }}
+
+                    </div>
+                 
+                </div>
+                        
+                 <div class="row">    
+                    <div id="modalidad" class="hidden col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                        {{ form_row(form.bancoModalidad) }}
+
+                    </div>
+                 </div>
+               
+
+
+                <div id="cheques" class="hidden row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        {{ form_row(form.serie) }}
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        {{ form_row(form.numeroSerie) }}
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        {{ form_row(form.banco) }}
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        {{ form_row(form.importe) }}
+                    </div>
+
+                </div>
+
+
+                {{ form_label(form.detallesFactura, '') }}
+
+                <ul class="det-fact  list-group" data-prototype="{{ form_widget(form.detallesFactura.vars.prototype)|e('html_attr') }}">
+
+                    {% for det in form.detallesFactura %}
+
+                        <li class="list-group-item list-group-item-primary" >{{ form_row(det.idfactura) }}</li>
+                        <li class="list-group-item list-group-item-secondary">{{ form_row(det.subtotal) }}</li>
+
+                    {% endfor %}
+
+                </ul>
+
+
+
+                {{form_end(form)}}
+
+                <div class="clearfix"></div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

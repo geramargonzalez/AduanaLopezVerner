@@ -1,0 +1,56 @@
+AduanaBundle\Entity\Usuario:
+    type: entity
+    table: Usuario
+    id:
+        idusuario:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+        apellido:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        password:
+            type: string
+            nullable: false
+            length: 500
+            options:
+                fixed: false
+        rol:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        imagen:
+            type: string
+            nullable: false
+            length: 500
+            options:
+                fixed: false
+        bio:
+            type: string
+            nullable: false
+            length: 1000
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

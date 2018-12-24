@@ -1,0 +1,22 @@
+AduanaBundle\Entity\Modalidad:
+    type: entity
+    table: Modalidad
+    id:
+        idmodalidad:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idModalidad
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombreModalidad:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+            column: nombreModalidad
+    lifecycleCallbacks: {  }

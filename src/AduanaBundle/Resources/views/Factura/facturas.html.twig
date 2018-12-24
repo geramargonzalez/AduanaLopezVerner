@@ -1,0 +1,122 @@
+{% extends "AduanaBundle:Default:layouts.html.twig"%}  
+
+
+
+
+{%block content %} 
+
+
+    <h2> Facturas activas </h2>
+
+    <div class="container">
+
+        {% include 'AduanaBundle:Factura:menuFac.html.twig'%}     
+
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                {% for message in app.session.flashbag().get('status')%}
+
+                    <div class="alert alert-success" role="alert">
+
+                        {{message}}
+
+                    </div>
+
+                {%endfor%}    
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container separation">
+
+        <div class="table-responsive">
+
+            <table class="table  table-bordered table-dark">
+
+                <tr>
+                    <th scope="col">
+                        Fecha
+                    </th> 
+                    <th scope="col">
+                        Cliente
+                    </th> 
+                    <th>
+                        Modalidad
+                    </th>
+                    <th scope="col">
+                        Concepto
+                    </th> 
+                    <th scope="col">
+                        Moneda
+                    </th> 
+                    <th scope="col">
+                        Total
+                    </th> 
+                    <th scope="col">
+                        Anular
+                    </th> 
+                    <th>
+                        Imprimir
+                    </th>
+                    <th scope="col">
+                        Reservar
+                    </th> 
+
+                </tr>
+
+                {% for fac in facs %}
+
+                    {% if fac.estado != "anulado"%}
+
+                        <tr>
+                            <td>
+                                {{fac.fechafactura|date('Y-m-d')}} 
+                            </td>
+                            <td>
+                                {{fac.idclietne}} 
+                            </td>
+                            <td>
+                                {{fac.modalidad}} 
+                            </td>
+                            <td>
+                                {{fac.concepto}} 
+                            </td>
+                            <td>
+                                {{fac.moneda}} 
+                            </td>
+                            <td>
+                                {{fac.total}} 
+                            </td>
+                            <td>
+                                <a href="{{path("blog_anul_fac", {"id":fac.idfactura}) }}" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span></a> 
+                            </td>
+                            <td>
+                                <a href="{{path("blog_impr_fac", {"id":fac.idfactura}) }}" class="btn btn-info"><span class="glyphicon glyphicon-print"></span></a> 
+                            </td>
+                            <td>
+                                <a href="{{path("blog_res_fac", {"id":fac.idfactura}) }}" class="btn btn-success"><span class="glyphicon glyphicon-saved"></span></a> 
+                            </td>
+
+                        </tr>
+
+                    {% endif %}        
+
+                {% endfor %}        
+
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+
+{% endblock %}

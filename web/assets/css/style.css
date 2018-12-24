@@ -1,0 +1,207 @@
+
+/* Generales */
+
+body {
+  
+}
+
+.box-form{
+
+    padding: 20px;
+    padding-top: 0px;
+    margin: 0 auto;
+    float:none;  
+    
+}
+
+.box-form input{
+    margin-bottom: 10px; 
+}
+
+
+.bg-image{
+    background-position:center;
+    background-image: url("../../assets/images/Recibo.jpg");
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+}
+
+
+h2{
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+
+
+div.separation{
+    padding-top: 30px;
+}
+
+/* Imprimir factura*/
+
+.imp-client {
+    
+    margin-left:370px;
+    margin-top: 150px;
+}
+
+.imp-fecha{
+   font-size: 17px;
+   margin-left:750px;
+   margin-top: -55px;
+}
+
+
+.imp-concepto{
+  
+   margin-left:400px;
+   margin-top: -44px;
+}
+
+.imp-modalidad{
+  
+   margin-left:400px;
+   margin-top: 50px;
+}
+
+.imp-total{
+   
+   margin-left:790px;
+   margin-top: 120px;
+}
+
+
+.imp-detalle-idfactura{
+   
+    margin-left:370px;
+    margin-top: 30px;
+    margin-bottom: -20px;
+
+}
+
+.imp-detalle-subtotal{
+   
+  margin-left:470px;
+  margin-top: -1px;
+  margin-bottom: -100px;
+}
+
+
+
+.title-modalidad{
+   
+    text-transform: uppercase;
+    font-style:normal;
+    margin-bottom: 25px;
+    
+}
+
+a.btn-Addmodalidad {
+    
+    margin-bottom: 10px;
+    
+}
+
+table{
+    padding-top: 20px;
+}
+
+
+ ul.det-fact {
+    
+    list-style:none;
+}
+
+
+nav div div ul li a .avatar img {
+
+    height: 100%;
+    text-align: center;
+}
+
+nav div div ul li a .avatar  {
+    
+    background-color: white;
+    border-radius: 500px;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    float:left;
+    margin-right: 12px;
+    margin-top: -1px;
+
+}
+
+nav div div ul {
+     list-style:none;
+     
+}
+nav div div ul .li-datos {
+    text-decoration: none;
+     margin-top: 9px;
+}
+
+nav div div ul li .nombreUsuario {
+   color:white;
+}
+
+
+.user_item .avatar{
+    
+    background-color: #eee;
+    border-radius: 550px;
+    width:75px;
+    height: 75px;
+    overflow: hidden;
+    float:left;
+}
+
+.user_item .avatar img
+{  
+    height: 100%;
+    text-align: center;
+}
+
+.user_item .user-item-content{
+    
+    padding: 10px;
+    margin-left: 85px;  
+}
+
+
+.text-pres{
+    padding-top: 100px;
+    margin-left: 50px;
+}
+
+
+.contenedor{
+    
+    width: 1290px;
+   
+}
+
+.text-title{
+     font-style:oblique;
+     font-stretch:condensed;
+     padding-top: 100px;
+     font-size: 40px;    
+}
+
+.perfil-container{
+    margin-left: 350px;
+}
+
+.img-perfil img{
+    width: 400px;
+    height:400px;
+    
+}
+
+div div div h3.title-perfil{
+    font-size: 45px;
+   
+}

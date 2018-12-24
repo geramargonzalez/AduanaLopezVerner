@@ -1,0 +1,128 @@
+{% extends "AduanaBundle:Default:layouts.html.twig"%}  
+
+
+{%block content %} 
+
+
+    <h2> Facturas anuladas </h2>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+            </div>
+
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+
+                {% include 'AduanaBundle:Factura:menuFac.html.twig'%}     
+
+            </div>
+
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                {% for message in app.session.flashbag().get('status')%}
+
+                    <div class="alert alert-success" role="alert">
+
+                        {{message}}
+
+                    </div>
+
+                {%endfor%}    
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container separation">
+
+
+        <div class="table-responsive">
+
+        <table class="table table-bordered table-dar">
+
+            <tr>
+                <th>
+                    Fecha
+                </th> 
+                <th>
+                    Cliente
+                </th> 
+                <th>
+                    Modalidad
+                </th>
+                <th>
+                    Concepto
+                </th> 
+                <th>
+                    Moneda
+                </th> 
+                <th>
+                    Total
+                </th> 
+                <th>
+                    Anular
+                </th> 
+
+            </tr>
+
+            {% for fac in facs %}
+
+                {% if fac.estado == "anulado"%}
+
+                    <tr>
+                        <td>
+                            {{fac.fechafactura|date('d-m-Y')}} 
+                        </td>
+                        <td>
+                            {{fac.idclietne}} 
+                        </td>
+                        <td>
+                            {{fac.modalidad}} 
+                        </td>
+                        <td>
+                            {{fac.concepto}} 
+                        </td>
+                        <td>
+                            {{fac.moneda}} 
+                        </td>
+                        <td>
+                            {{fac.total}} 
+                        </td>
+                        <td>
+                            <a href="{{path("blog_activar_fac", {"id":fac.idfactura}) }}" class="btn btn-success">Activar</a> 
+                        </td>
+                    </tr>
+
+                {% endif %}        
+
+            {% endfor %}        
+
+
+        </table>
+            
+        </div>
+    </div>
+
+
+
+{% endblock %}

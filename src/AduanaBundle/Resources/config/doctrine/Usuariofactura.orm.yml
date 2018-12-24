@@ -1,0 +1,26 @@
+AduanaBundle\Entity\Usuariofactura:
+    type: entity
+    table: usuarioFactura
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        idfactura:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idFactura
+        idusuario:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idUsuario
+    lifecycleCallbacks: {  }

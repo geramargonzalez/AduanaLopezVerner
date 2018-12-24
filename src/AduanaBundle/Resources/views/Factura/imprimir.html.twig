@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+
+        <title> 
+            {%block titulo %}   {% endblock %}
+        </title>
+
+        {%block stylesheets %}  
+
+            <link href="{{asset("assets/bootstrap/css/bootstrap.css")}}" type="text/css" rel="stylesheet"/>
+            <link href="{{asset("assets/css/bootstrap.cosmo.min.css")}}" type="text/css" rel="stylesheet"/>
+            <link href="{{asset("assets/css/style.css")}}" type="text/css" rel="stylesheet"/>
+
+        {% endblock %}
+
+        {%block javascripts %} 
+            <script  type="text/javascript">
+                var url = '{{ app.request.getSchemeAndHttpHost()}}/RedSocial/web/app_dev.php';
+            </script>
+            <script src="{{asset("assets/js/jquery.min.js") }}"></script>
+            <script src="{{asset("assets/bootstrap/js/bootstrap.min.js") }}"></script>
+
+        {% endblock %}
+
+    </head>
+    <body class="bg-image">
+        
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-lg-12 imp-client">{{fac.idclietne}}</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 imp-fecha">{{fac.fechafactura|date('d-m-Y')}} </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 imp-modalidad">{{fac.modalidad}} </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 imp-concepto">{{fac.concepto}} </div>
+            </div>
+
+            {% for det in detalles%}
+                <div class="row">
+                    <div class="col-lg-6 imp-detalle-idfactura">{{det.idfactura}} </div>
+                    <div class="col-lg-6 imp-detalle-subtotal">{{det.subtotal}} </div>
+                </div>
+            {% endfor%}
+            
+            <div class="row">
+                <div class="col-lg-12 imp-total">{{fac.total}}</div>
+            </div>
+        
+        
+        </div>
+
+</body>
+
+</html>

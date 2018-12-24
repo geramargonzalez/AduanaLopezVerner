@@ -1,0 +1,69 @@
+{% extends "AduanaBundle:Default:layouts.html.twig"%}  
+
+
+
+
+{%block content %} 
+
+    
+<div class="col-lg-8 box-form">
+
+        <h2> Usuarios </h2>
+
+        {% for message in app.session.flashbag().get('status')%}
+            <div class="alert alert-success" role="alert">
+                {{message}}
+            </div>
+        {%endfor%}
+
+        <table class="table table-dark">
+            <tr>
+                <th>
+                     Nombre
+                </th> 
+                <th>
+                    Apellido
+                </th> 
+                <th>
+                    Email
+                </th>
+                 <th>
+                    Eliminar
+                </th>
+
+            </tr>
+
+            {% for user in users %}
+                
+                {% if user.rol == "admin" and user != app.user %}
+                   
+                    <tr>
+                        <td>
+                          {{user.nombre}} 
+                        </td>
+                        <td>
+                          {{user.apellido}} 
+                        </td>
+                        <td>
+                          {{user.email}} 
+                        </td>
+                        <td>
+                         <a href="{{path("blog_eli_user", {"id": user.idusuario }) }}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a> 
+                        </td>
+                    </tr>
+                
+                {% endif %}        
+            
+            {% endfor %}        
+
+
+        </table>
+
+    </div>
+
+
+
+    <div class="clearfix"></div>
+
+
+{% endblock %}

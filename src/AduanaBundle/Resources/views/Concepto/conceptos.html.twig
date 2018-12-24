@@ -1,0 +1,92 @@
+{% extends "AduanaBundle:Default:layouts.html.twig"%}  
+
+
+{%block content %} 
+
+    <h2> Concepto </h2>
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                <a href="{{path("blog_add_con")}}" class="btn btn-success">Añadir Concepto</a>
+            </div>
+
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-">
+                {% for message in app.session.flashbag().get('status')%}
+
+                    <div class="alert alert-success" role="alert">
+
+                        {{message}}
+
+                    </div>
+
+                {%endfor%}
+            </div>
+
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            </div>
+
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+
+
+
+                <table class="table table-dark">
+                    <tr>
+                        <th>
+                            Concepto
+                        </th> 
+                        <th>
+                            Eliminar
+                        </th> 
+                    </tr>
+
+                    {% for conc in conceptos %}
+                        <tr>
+                            <td>
+                                {{conc.nombreConcepto}} 
+                            </td>
+                            <td>
+
+                                <a href="{{path("blog_eli_con", {"id":conc.idconcepto}) }}" class="btn btn-danger">Eliminar</a> 
+
+                            </td>
+                        </tr>
+                    {% endfor %}        
+
+
+                </table>
+
+            </div>
+
+
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

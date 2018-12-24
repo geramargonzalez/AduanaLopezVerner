@@ -1,0 +1,21 @@
+{% extends "AduanaBundle:Default:layouts.html.twig"%}  
+
+
+{%block content %} 
+
+
+    <div class="col-lg-8 box-form">
+
+        <h2> Editar usuario: {{user.nombre}}  {{user.apellido}}  </h2>
+        
+          {{form_start(form,{'action':'','method':'POST'})}}
+         
+         
+
+         {{form_end(form)}}
+
+        <div class="clearfix"></div>
+    
+    </div>
+
+{% endblock %}

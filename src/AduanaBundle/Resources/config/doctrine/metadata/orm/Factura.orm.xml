@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Factura" table="Factura">
+    <indexes>
+      <index name="fk_foreign_cliente" columns="idClietne"/>
+    </indexes>
+    <id name="idfactura" type="integer" column="idFactura">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fechafactura" type="date" column="fechaFactura" nullable="false"/>
+    <field name="concepto" type="string" column="concepto" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="modalidad" type="string" column="modalidad" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="moneda" type="string" column="moneda" length="30" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="total" type="float" column="total" precision="10" scale="0" nullable="false"/>
+    <field name="estado" type="string" column="estado" length="100" nullable="false"/>
+    <many-to-one field="idclietne" target-entity="Cliente" fetch="LAZY">
+      <join-columns>
+        <join-column name="idClietne" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+ 
+</doctrine-mapping>

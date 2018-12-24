@@ -1,0 +1,27 @@
+AduanaBundle\Entity\Cliente:
+      properties:
+          ci:
+            - NotBlank: {message: "La cedula no puede estar vacia" }
+          nombre:
+            - NotBlank: {message: "El nombre no puede estar vacio" }
+          apellido:
+            - NotBlank: {message: "El apellido no puede estar vacio" }
+          
+AduanaBundle\Entity\Concepto:
+      properties:
+          nombreConcepto:
+            - NotBlank: {message: "El concepto no puede estar vacia" }
+            
+AduanaBundle\Entity\Modalidad:
+      properties:
+          nombreModalidad:
+            - NotBlank: {message: "La modalidad no puede estar vacia" }
+          
+          
+AduanaBundle\Entity\Factura:
+    properties:       
+        fechafactura:
+            - LessThanOrEqual: today
+            
+        
+                    

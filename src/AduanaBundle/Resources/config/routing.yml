@@ -1,0 +1,103 @@
+aduana_homepage:
+    path:     /home
+    defaults: { _controller: AduanaBundle:Default:index}
+    
+blog_add_cli:
+    path:     /clientes/add
+    defaults: { _controller: AduanaBundle:Cliente:add}
+    
+blog_index_cli:
+    path:     /clientes
+    defaults: { _controller: AduanaBundle:Cliente:index}
+  
+blog_eli_cli:
+    path:     /clientes/delete/{id}
+    defaults: { _controller: AduanaBundle:Cliente:delete}
+       
+blog_add_fac:
+    path:     /facturas/add
+    defaults: { _controller: AduanaBundle:Factura:add}
+       
+blog_ver_fac:
+    path:     /facturas
+    defaults: { _controller: AduanaBundle:Factura:index}
+
+blog_verAnul_fac:
+    path:     /facturas/anuladas
+    defaults: { _controller: AduanaBundle:Factura:anuladas}
+    
+blog_verRes_fac:
+    path:     /facturas/reservadas
+    defaults: { _controller: AduanaBundle:Factura:reservadas}
+         
+blog_anul_fac:
+    path:     /factura/anular/{id}
+    defaults: { _controller: AduanaBundle:Factura:anular}
+    
+blog_impr_fac:
+    path:     /factura/imprimir/{id}
+    defaults: { _controller: AduanaBundle:Factura:imprimir}
+    
+blog_res_fac:
+    path:     /factura/reservar/{id}
+    defaults: { _controller: AduanaBundle:Factura:reservar}
+     
+blog_eli_mod:
+    path:     /modalidades/delete/{id}
+    defaults: { _controller: AduanaBundle:Modalidad:delete}
+    
+blog_activar_fac:
+    path:     /factura/activar/{id}
+    defaults: { _controller: AduanaBundle:Factura:activar}
+       
+blog_add_mod:
+    path:     /modalidad/add
+    defaults: { _controller: AduanaBundle:Modalidad:add}
+     
+blog_ver_mod:
+    path:     /modalidad
+    defaults: { _controller: AduanaBundle:Modalidad:index}
+    
+blog_eli_con:
+    path:     /conceptos/delete/{id}
+    defaults: { _controller: AduanaBundle:Concepto:delete}
+       
+blog_add_con:
+    path:     /concepto/add
+    defaults: { _controller: AduanaBundle:Concepto:add}
+
+blog_ver_con:
+    path:     /concepto
+    defaults: { _controller: AduanaBundle:Concepto:index}
+   
+blog_eli_user:
+    path:     /usuarios/delete/{id}
+    defaults: { _controller: AduanaBundle:Usuario:delete}
+       
+blog_ver_user:
+    path:     /usuarios
+    defaults: { _controller: AduanaBundle:Usuario:users}
+    
+login:
+    path: /login
+    defaults: { _controller: AduanaBundle:Usuario:login}
+    
+register:
+    path: /register
+    defaults: { _controller: AduanaBundle:Usuario:register }
+  
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
+    
+user_edit:
+    path: /edit
+    defaults: { _controller: AduanaBundle:Usuario:edit}
+      
+user_perfil:
+    path: /perfil
+    defaults: { _controller: AduanaBundle:Usuario:perfil}
+    
+    
